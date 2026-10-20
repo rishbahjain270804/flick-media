@@ -11,8 +11,8 @@
   "dependencies": {
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
-    "firebase": "^13.0.0",
-    "firebase-admin": "^14.5.0",
+    "firebase": "^11.4.0",
+    "firebase-admin": "^12.7.0",
     "lucide-react": "^0.453.0",
     "next": "14.2.15",
     "qrcode": "^1.5.4",
