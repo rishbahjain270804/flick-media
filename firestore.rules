@@ -1,23 +1,24 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Public forms can be read by anyone
+    // Forms collection
     match /forms/{formId} {
-      allow read: if resource.data.isPublished == true || request.auth != null;
-      allow write: if request.auth != null;
+      allow read, write: if true;
       
-      // Submissions under a form
+      // Submissions sub-collection
       match /submissions/{subId} {
-        // Anyone can submit a form response
-        allow create: if true;
-        // Only authenticated admins can read, update, or delete submissions
-        allow read, update, delete: if request.auth != null;
+        allow read, write: if true;
       }
     }
     
-    // Default fallback
+    // Top-level submissions collection if accessed directly
+    match /submissions/{subId} {
+      allow read, write: if true;
+    }
+
+    // Default match
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if true;
     }
   }
 }

@@ -23,6 +23,7 @@ import {
 import { Form, FormField, FormFieldType } from '@/types';
 import { generateId } from '@/lib/utils';
 import { FORMS_DOMAIN } from '@/lib/urls';
+import { saveForm, generateFormHash } from '@/lib/firestoreService';
 
 const FIELD_GROUPS = [
   {
@@ -188,38 +189,40 @@ export default function FormBuilder({ initialForm, isNew = false }: FormBuilderP
 
     try {
       setSaving(true);
-      const payload: Partial<Form> = {
-        title,
-        hash: hash.trim() || undefined,
-        description,
-        category,
-        isPublished,
-        submitButtonText,
-        successMessage,
-        fields,
+      const formId = initialForm?.id || `form-${Date.now().toString(36)}`;
+      const formHash = (hash && hash.trim()) || initialForm?.hash || generateFormHash();
+      const slug = (title || 'form')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)+/g, '') || `slate-${formHash}`;
+
+      const payload: Form = {
+        id: formId,
+        slug,
+        hash: formHash,
+        title: title || 'Untitled Slate',
+        description: description || '',
+        category: category || 'General',
+        isPublished: isPublished ?? true,
+        submitButtonText: submitButtonText || 'Submit',
+        successMessage: successMessage || 'Thank you for your submission!',
+        fields: fields || [],
+        createdAt: initialForm?.createdAt || new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        settings: initialForm?.settings || {
+          isOpen: true,
+          maxSubmissions: 500,
+        },
       };
 
-      const endpoint = isNew ? '/api/forms' : `/api/forms/${initialForm?.id}`;
-      const method = isNew ? 'POST' : 'PUT';
-
-      const res = await fetch(endpoint, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        setSavedSuccess(true);
-        setTimeout(() => setSavedSuccess(false), 2500);
-        if (isNew) {
-          router.push(`/forms/${data.form.id}/manage`);
-        }
-      } else {
-        alert(data.error || 'Failed to save form');
+      await saveForm(payload);
+      setSavedSuccess(true);
+      setTimeout(() => setSavedSuccess(false), 2500);
+      if (isNew) {
+        router.push(`/forms/${payload.id}/manage`);
       }
-    } catch (err) {
-      alert('Network error while saving');
+    } catch (err: any) {
+      alert(err?.message || 'Error saving form to Firestore');
     } finally {
       setSaving(false);
     }

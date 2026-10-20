@@ -28,6 +28,7 @@ import {
 import { Form } from '@/types';
 import { getPublicFormUrl, FORMS_DOMAIN } from '@/lib/urls';
 import ShareModal from '@/components/ShareModal';
+import { fetchForms as getFirestoreForms, removeForm as deleteFirestoreForm, fetchSubmissions } from '@/lib/firestoreService';
 
 interface FormWithStats extends Form {
   stats: {
@@ -49,19 +50,49 @@ export default function DashboardPage() {
   const [selectedShareForm, setSelectedShareForm] = useState<Form | null>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const host = window.location.hostname;
+      if (host.startsWith('forms.')) {
+        const path = window.location.pathname.replace(/^\/+/, '');
+        const targetHash = path || 'flk2026';
+        window.location.replace(`/f/${targetHash}`);
+        return;
+      }
+    }
     fetchForms();
   }, []);
 
   const fetchForms = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/forms');
-      const data = await res.json();
-      if (data.success) {
-        setForms(data.forms);
-      }
+      const rawForms = await getFirestoreForms();
+      const formsWithStats: FormWithStats[] = await Promise.all(
+        rawForms.map(async (form) => {
+          const subs = await fetchSubmissions(form.id);
+          const totalSubmissions = subs.length;
+          const applied = subs.filter((s) => s.status === 'applied').length;
+          const underReview = subs.filter((s) => s.status === 'under_review').length;
+          const shortlisted = subs.filter((s) => s.status === 'shortlisted').length;
+          const selected = subs.filter((s) => s.status === 'selected').length;
+          const rejected = subs.filter((s) => s.status === 'rejected').length;
+          const lastSubmission = subs.length > 0 ? subs[subs.length - 1].submittedAt : null;
+          return {
+            ...form,
+            stats: {
+              totalSubmissions,
+              applied,
+              underReview,
+              shortlisted,
+              selected,
+              rejected,
+              lastSubmission,
+            },
+          };
+        })
+      );
+      setForms(formsWithStats);
     } catch (err) {
-      console.error('Failed to load forms', err);
+      console.error('Failed to load forms from Firestore', err);
     } finally {
       setLoading(false);
     }
@@ -78,9 +109,8 @@ export default function DashboardPage() {
   const handleDelete = async (id: string, title: string) => {
     if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
     try {
-      const res = await fetch(`/api/forms/${id}`, { method: 'DELETE' });
-      const data = await res.json();
-      if (data.success) {
+      const ok = await deleteFirestoreForm(id);
+      if (ok) {
         setForms((prev) => prev.filter((f) => f.id !== id));
       }
     } catch (err) {

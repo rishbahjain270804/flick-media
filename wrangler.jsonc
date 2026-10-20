@@ -1,0 +1,13 @@
+{
+  "name": "flick-media",
+  "compatibility_date": "2024-10-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "forms.buildwithrex.me/*", "zone_name": "buildwithrex.me" },
+    { "pattern": "panel.buildwithrex.me/*", "zone_name": "buildwithrex.me" }
+  ]
+}
