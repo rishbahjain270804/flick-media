@@ -1,0 +1,145 @@
+[
+  {
+    "id": "APP-005",
+    "formId": "flick-crew-tracker",
+    "submittedAt": "2026-10-20T11:14:23.592Z",
+    "status": "applied",
+    "followUpNotes": "",
+    "data": {
+      "full_name": "Devansh Rajput",
+      "whatsapp_number": "+91 91234 56789",
+      "email": "devansh@sounddesign.com",
+      "city_location": "Bangalore",
+      "department_role": "Sound Recordist / Audio Engineer",
+      "other_skills": "Boom mic operator, Foley artist, Pro Tools",
+      "availability_dates": "Fully Available for all dates (24-29 Oct)",
+      "available_shoot_days": [
+        "Day 1 (24 Oct)",
+        "Day 2 (25 Oct)",
+        "Day 3 (26 Oct)"
+      ],
+      "can_attend_preprod": "Yes (In-person & Online)",
+      "experience_level": "3-5 years Professional Experience",
+      "portfolio_link": "https://soundcloud.com/devansh-audio-samples"
+    }
+  },
+  {
+    "id": "APP-001",
+    "formId": "flick-crew-tracker",
+    "submittedAt": "2026-10-20T10:15:00.000Z",
+    "status": "shortlisted",
+    "followUpNotes": "Top priority: Great lyricist & composer. Need to coordinate for vocal recording.",
+    "data": {
+      "full_name": "Rishabh Bothra",
+      "whatsapp_number": "+91 99887 76655",
+      "email": "rishabh.bothra@fliokmedia.com",
+      "city_location": "Mumbai",
+      "department_role": "Lyricist & Rapper",
+      "other_skills": "Producer, Composer, Sound Arrangement",
+      "availability_dates": "Fully Available for all dates (24-29 Oct)",
+      "available_shoot_days": [
+        "Day 1 (24 Oct)",
+        "Day 2 (25 Oct)",
+        "Day 3 (26 Oct)",
+        "Day 4 (27 Oct)"
+      ],
+      "can_attend_preprod": "Yes (In-person & Online)",
+      "experience_level": "3-5 years Professional Experience",
+      "portfolio_link": "https://open.spotify.com/track/2WcH0fdH0QTvBNUsiRlh4Q",
+      "instagram_website": "@rishabh_bothra",
+      "equipment_resources": "Studio monitors, Neumann condenser mic, Apollo Twin interface, Logic Pro",
+      "collaboration_expectations": "Looking to produce memorable title track & feature in the music video",
+      "notes_special_reqs": "Ready for table reads from 22nd Oct"
+    }
+  },
+  {
+    "id": "APP-002",
+    "formId": "flick-crew-tracker",
+    "submittedAt": "2026-10-20T11:30:00.000Z",
+    "status": "under_review",
+    "followUpNotes": "Strong cinematography reel. Checking camera kit availability for 25-27 Oct.",
+    "data": {
+      "full_name": "Aakash Sharma",
+      "whatsapp_number": "+91 98201 12345",
+      "email": "aakash.dop@gmail.com",
+      "city_location": "Mumbai / Andheri West",
+      "department_role": "Cinematographer / DOP",
+      "other_skills": "Color grading, Drone operator",
+      "availability_dates": "Available on select days only",
+      "available_shoot_days": [
+        "Day 2 (25 Oct)",
+        "Day 3 (26 Oct)",
+        "Day 4 (27 Oct)"
+      ],
+      "can_attend_preprod": "Online / Virtual only",
+      "experience_level": "3-5 years Professional Experience",
+      "portfolio_link": "https://vimeo.com/aakashsharmadop",
+      "instagram_website": "@aakash_cinematography",
+      "equipment_resources": "Sony FX6 with Sony G Master T1.5 prime lens set, Tilta Mirage matte box",
+      "collaboration_expectations": "High cinematic quality indie production",
+      "notes_special_reqs": "Requires 1 focus puller assistant"
+    }
+  },
+  {
+    "id": "APP-003",
+    "formId": "flick-crew-tracker",
+    "submittedAt": "2026-10-20T12:05:00.000Z",
+    "status": "applied",
+    "followUpNotes": "Just submitted, awaiting review by director.",
+    "data": {
+      "full_name": "Priya Deshmukh",
+      "whatsapp_number": "+91 97690 98765",
+      "email": "priya.styling@outlook.com",
+      "city_location": "Pune / Traveling to Mumbai",
+      "department_role": "Costume Designer / Wardrobe Stylist",
+      "other_skills": "Mood boarding, fabric sourcing, hair styling",
+      "availability_dates": "Fully Available for all dates (24-29 Oct)",
+      "available_shoot_days": [
+        "Day 1 (24 Oct)",
+        "Day 2 (25 Oct)",
+        "Day 3 (26 Oct)",
+        "Day 4 (27 Oct)",
+        "Day 5 (28 Oct)",
+        "Day 6 (29 Oct)"
+      ],
+      "can_attend_preprod": "Yes (In-person & Online)",
+      "experience_level": "1-2 years Indie / Freelance Projects",
+      "portfolio_link": "https://behance.net/priyadeshmukh_style",
+      "instagram_website": "@styled.by.priya",
+      "equipment_resources": "Portable steamer, wardrobe rack, alteration kit",
+      "collaboration_expectations": "Creative indie styling portfolio piece",
+      "notes_special_reqs": ""
+    }
+  },
+  {
+    "id": "APP-004",
+    "formId": "flick-crew-tracker",
+    "submittedAt": "2026-10-20T13:45:00.000Z",
+    "status": "selected",
+    "followUpNotes": "Finalized for production coordination. Sent confirmation email.",
+    "data": {
+      "full_name": "Vikram Mehta",
+      "whatsapp_number": "+91 99112 33445",
+      "email": "vikram.lineprod@gmail.com",
+      "city_location": "Mumbai",
+      "department_role": "Production Manager / Line Producer",
+      "other_skills": "Location scouting, permits, crew budgeting",
+      "availability_dates": "Fully Available for all dates (24-29 Oct)",
+      "available_shoot_days": [
+        "Day 1 (24 Oct)",
+        "Day 2 (25 Oct)",
+        "Day 3 (26 Oct)",
+        "Day 4 (27 Oct)",
+        "Day 5 (28 Oct)",
+        "Day 6 (29 Oct)"
+      ],
+      "can_attend_preprod": "Yes (In-person & Online)",
+      "experience_level": "5+ years Industry Veteran / Commercial Productions",
+      "portfolio_link": "https://linkedin.com/in/vikram-mehta-prod",
+      "instagram_website": "",
+      "equipment_resources": "Production walkie-talkies (x8), emergency kit",
+      "collaboration_expectations": "Smooth on-time execution",
+      "notes_special_reqs": "Needs final shoot schedule by 22 Oct"
+    }
+  }
+]

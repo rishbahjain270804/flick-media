@@ -1,0 +1,172 @@
+[
+  {
+    "id": "flick-crew-tracker",
+    "slug": "flick-media-crew",
+    "hash": "flk2026",
+    "title": "FLICK MEDIA | Indie Artists & Crew Application Tracker",
+    "description": "Join our upcoming indie film & music video project (tentative shoot 24-29 Oct). Please share your details, portfolio, and availability. We review all entries within 1-2 days!",
+    "category": "Crew & Artist Applications",
+    "isPublished": true,
+    "themeColor": "#e11d48",
+    "submitButtonText": "Submit Application",
+    "successMessage": "Thank you for applying to Flick Media! We will review your portfolio and reach out via WhatsApp/Email ASAP.",
+    "createdAt": "2026-10-20T10:00:00.000Z",
+    "updatedAt": "2026-10-20T10:00:00.000Z",
+    "fields": [
+      {
+        "id": "full_name",
+        "label": "Full Name",
+        "type": "text",
+        "placeholder": "e.g. Rishabh Bothra",
+        "required": true,
+        "helpText": "Your legal or professional artist name"
+      },
+      {
+        "id": "whatsapp_number",
+        "label": "WhatsApp Number",
+        "type": "tel",
+        "placeholder": "+91 98765 43210",
+        "required": true,
+        "helpText": "Include country code for prompt WhatsApp communication"
+      },
+      {
+        "id": "email",
+        "label": "Email Address",
+        "type": "email",
+        "placeholder": "artist@example.com",
+        "required": true
+      },
+      {
+        "id": "city_location",
+        "label": "City / Current Location",
+        "type": "text",
+        "placeholder": "e.g. Mumbai, Delhi, Bengaluru, Pune",
+        "required": true
+      },
+      {
+        "id": "department_role",
+        "label": "Department / Primary Role",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Lyricist & Rapper",
+          "Music Producer & Composer",
+          "Singer / Vocalist",
+          "Director",
+          "Assistant Director (AD)",
+          "Cinematographer / DOP",
+          "Camera Operator / Focus Puller",
+          "Sound Recordist / Audio Engineer",
+          "Editor & Colorist",
+          "Production Designer / Art Director",
+          "Production Manager / Line Producer",
+          "Choreographer / Movement Coach",
+          "Costume Designer / Wardrobe Stylist",
+          "Makeup & Hair Artist",
+          "Actor / Performer",
+          "Other Specialist"
+        ],
+        "helpText": "Select the role you are primarily applying for"
+      },
+      {
+        "id": "other_skills",
+        "label": "Other Skills & Secondary Roles",
+        "type": "text",
+        "placeholder": "e.g. Guitarist, Drone Pilot, DaVinci Resolve, Mixing, Beatbox",
+        "required": false
+      },
+      {
+        "id": "availability_dates",
+        "label": "Availability (24-29 Oct, tentative)",
+        "type": "radio",
+        "required": true,
+        "options": [
+          "Fully Available for all dates (24-29 Oct)",
+          "Available on select days only",
+          "Available with prior notice / Flexible",
+          "Pre-production only"
+        ]
+      },
+      {
+        "id": "available_shoot_days",
+        "label": "Available Shoot Days",
+        "type": "checkbox",
+        "required": false,
+        "options": [
+          "Day 1 (24 Oct)",
+          "Day 2 (25 Oct)",
+          "Day 3 (26 Oct)",
+          "Day 4 (27 Oct)",
+          "Day 5 (28 Oct)",
+          "Day 6 (29 Oct)"
+        ]
+      },
+      {
+        "id": "can_attend_preprod",
+        "label": "Can Attend Pre-production Meetings?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          "Yes (In-person & Online)",
+          "Online / Virtual only",
+          "Limited availability"
+        ]
+      },
+      {
+        "id": "experience_level",
+        "label": "Experience Level",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Student / Emerging Talent (Passionate & eager to learn)",
+          "1-2 years Indie / Freelance Projects",
+          "3-5 years Professional Experience",
+          "5+ years Industry Veteran / Commercial Productions"
+        ]
+      },
+      {
+        "id": "portfolio_link",
+        "label": "Showreel / Portfolio / Spotify Link",
+        "type": "url",
+        "placeholder": "https://open.spotify.com/track/... or YouTube / Vimeo link",
+        "required": true,
+        "helpText": "Share your best work (Spotify, YouTube, Vimeo, Behance, Google Drive)"
+      },
+      {
+        "id": "profile_cv_link",
+        "label": "Profile / CV Link",
+        "type": "url",
+        "placeholder": "https://linkedin.com/in/... or Google Drive PDF",
+        "required": false
+      },
+      {
+        "id": "instagram_website",
+        "label": "Instagram / Website",
+        "type": "text",
+        "placeholder": "@yourhandle or https://yourwebsite.com",
+        "required": false
+      },
+      {
+        "id": "equipment_resources",
+        "label": "Equipment / Resources Owned (if any)",
+        "type": "textarea",
+        "placeholder": "e.g. Sony FX3 / A7SIII, Lenses, Wireless Mics, Logic Pro X Studio, Lighting kits",
+        "required": false
+      },
+      {
+        "id": "collaboration_expectations",
+        "label": "Collaboration Expectations",
+        "type": "textarea",
+        "placeholder": "What are you looking to achieve from this project? (Credits, honorarium, networking, creative freedom)",
+        "required": false
+      },
+      {
+        "id": "notes_special_reqs",
+        "label": "Notes / Special Requirements",
+        "type": "textarea",
+        "placeholder": "Any dietary needs, travel requirements, or notes for the production team",
+        "required": false
+      }
+    ]
+  }
+]
