@@ -11,11 +11,16 @@ import {
   Disc3,
   SlidersHorizontal,
   ChevronRight,
-  Radio
+  Radio,
+  LogOut,
+  User as UserIcon
 } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { user, isDevBypassed, signOutUser } = useAuth();
+  const isAuthenticated = !!user || isDevBypassed;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-hairline bg-studio-950/95 backdrop-blur-md">
@@ -93,6 +98,23 @@ export default function Navbar() {
               <Plus className="h-3 w-3 stroke-[2.5]" />
               <span>Create Form</span>
             </Link>
+
+            {isAuthenticated ? (
+              <button
+                onClick={signOutUser}
+                className="p-1.5 rounded text-studio-400 hover:text-rose-400 hover:bg-studio-900 transition-colors"
+                title={`Signed in as ${user?.email || 'Admin'} (Click to Sign Out)`}
+              >
+                <LogOut className="h-3.5 w-3.5" />
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="px-2.5 py-1 text-xs font-medium rounded text-studio-300 hover:text-white hover:bg-studio-900 border border-studio-800 transition-colors"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
         </div>
       </div>

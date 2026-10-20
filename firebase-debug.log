@@ -1,0 +1,30 @@
+[debug] [2026-10-20T12:05:12.190Z] ----------------------------------------------------------------------
+[debug] [2026-10-20T12:05:12.193Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rishabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create flick-media-rex --display-name=Flick Media
+[debug] [2026-10-20T12:05:12.194Z] CLI Version:   15.28.2
+[debug] [2026-10-20T12:05:12.194Z] Platform:      win32
+[debug] [2026-10-20T12:05:12.194Z] Node Version:  v22.15.0
+[debug] [2026-10-20T12:05:12.195Z] Detected Agent: antigravity
+[debug] [2026-10-20T12:05:12.195Z] Time:          Tue Oct 20 2026 17:35:12 GMT+0530 (India Standard Time)
+[debug] [2026-10-20T12:05:12.195Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-20T12:05:12.208Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-20T12:05:12.208Z] > authorizing via signed-in user (rishabhjain27082004@gmail.com)
+[debug] [2026-10-20T12:05:12.222Z] Checked if tokens are valid: true, expires at: 1792500975856
+[debug] [2026-10-20T12:05:12.223Z] Checked if tokens are valid: true, expires at: 1792500975856
+[debug] [2026-10-20T12:05:12.224Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2026-10-20T12:05:12.224Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"flick-media-rex","name":"Flick Media"}
+[debug] [2026-10-20T12:05:14.039Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2026-10-20T12:05:14.040Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.8329160338183971231"}
+[debug] [2026-10-20T12:05:14.041Z] Checked if tokens are valid: true, expires at: 1792500975856
+[debug] [2026-10-20T12:05:14.041Z] Checked if tokens are valid: true, expires at: 1792500975856
+[debug] [2026-10-20T12:05:14.041Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8329160338183971231 [none]
+[debug] [2026-10-20T12:05:15.609Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8329160338183971231 200
+[debug] [2026-10-20T12:05:15.609Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8329160338183971231 {"name":"operations/create_project.global.8329160338183971231","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","ready":true},"done":true,"error":{"code":8,"message":"The project cannot be created because you have exceeded your allotted project quota.","details":[{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"description":"The project cannot be created because you have exceeded your allotted project quota."}]}]}}
+[debug] [2026-10-20T12:05:15.794Z] FirebaseError: The project cannot be created because you have exceeded your allotted project quota.
+    at OperationPoller.poll (C:\Users\rishabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\operation-poller.js:25:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createCloudProject (C:\Users\rishabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:237:29)
+    at async createFirebaseProjectAndLog (C:\Users\rishabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:102:9)
+    at async C:\Users\rishabh\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:280:28
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.

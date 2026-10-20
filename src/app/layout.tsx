@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Flick Media | Custom Form Builder & Applicant Operations',
@@ -23,8 +24,10 @@ export default function RootLayout({
             <div className="absolute top-20 right-1/4 w-[400px] h-[300px] bg-indigo-600/10 blur-[130px] rounded-full" />
           </div>
 
-          <Navbar />
-          <main className="flex-1 relative z-10">{children}</main>
+          <AuthProvider>
+            <Navbar />
+            <main className="flex-1 relative z-10">{children}</main>
+          </AuthProvider>
 
           <footer className="relative z-10 border-t border-hairline bg-studio-950 py-5 text-center text-xs text-studio-500">
             <div className="max-w-[1400px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[11px]">
